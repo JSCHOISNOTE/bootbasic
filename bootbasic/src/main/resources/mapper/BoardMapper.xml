@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+ <!-- namespace는 패키지명을 포함한 인터페이스명 -->
+ <mapper namespace="com.simple.basic.service.board.BoardMapper">
+ 	<!-- id는 사용할 추상메서드의 이름 -->
+ 	<!-- select태그는 resultType속성으로 결과를 받아갈 타입을 적습니다-->
+ 	<!-- 
+ 	<select id="getTime" resultType="string">
+ 		select now()
+ 	</select>
+ 	 -->
+ 	 
+ 	<!-- 단일값, vo값, map의 key값은 바로 사용할 수 있습니다 -->
+ 	<insert id="insert">
+ 		insert into board(writer, title, content)
+ 		values(#{writer}, #{title}, #{content} )
+ 	</insert>
+ 	 
+ 	<!-- resultType에는 한행에 대하여 처리할 타입을 넣습니다 -->
+ 	<!-- com.simple.basic.command패키지 안에 vo클래스를 단축명으로 사용 -->
+ 	<select id="getList" resultType="BoardVO">
+ 		select * from board order by bno desc
+ 	</select>
+ 	
+ 	<select id="getDetail" resultType="BoardVO">
+ 		select * from board where bno = #{bno}
+ 	</select>
+ 	 
+ 	<delete id="delete">
+ 		delete from board where bno = #{bno}
+ 	</delete>
+ 	 
+ 	 
+ </mapper>

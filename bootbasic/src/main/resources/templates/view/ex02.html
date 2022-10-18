@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- [[${bbb}]] -->
+	
+	<div th:each="a : ${aaa}">
+		[[${a.name}]]
+		[[${a.age}]]
+	</div>
+	
+	
+	<hr>
+	<!-- 앞에 변수에는 데이터, 뒤에 변수에는 상태값 -->
+	<div th:each="a, state : ${aaa}">
+		[[${state} + '번:' + ${a.name}]]
+	</div>
+	
+	
+	<hr>
+	
+	<!-- 반복문과, 조건문을 같이 사용할 수 있습니다~ -->
+	<ul>
+		<li th:each="a : ${aaa}" th:if="${a.age % 2 == 0}">[[${a}]]</li>
+	</ul>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<h3>타임리프 인클루드형식</h3>
+	<!-- ~{./전체경로 :: 이름} -->
+	<div th:replace="~{./include/layout01 :: part1 }"></div>
+	<th:block th:replace="~{./include/layout01 :: part1 }"></th:block>
+
+
+	<th:block th:replace="~{./include/layout01 :: part2 }"></th:block>
+
+
+	<hr>
+	<!-- ~{./전체경로 } -->
+	<th:block th:replace="~{./include/layout02 }"></th:block>
+	
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+</body>
+</html>

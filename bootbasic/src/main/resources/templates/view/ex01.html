@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!-- 타임리프 선언시 반드시 선언 -->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<h3>타임리프 문법</h3>
+	
+	<h3 th:text="${'hello world'}"></h3>
+	<h3>[[${'hello world'}]]</h3>
+	
+	<h3 th:text="${1 == 1}"></h3>
+	<h3>[[${1 != 1}]]</h3>
+	
+	<h3 th:text="${12 % 2 == 0 and 12 % 5 == 2}"></h3>
+	<h3>[[${12 % 2 == 0 and 12 % 5 == 2}]]</h3>
+	
+	<!-- 홍길동과 홍길동이 같다의 표현 -->
+	<h3 th:text="${'홍길동' == '홍길동'}"></h3>
+	<h3>[[${'홍길동' eq '홍길동'}]]</h3>
+	
+	
+	<hr>
+	
+	<h3>타임리프 변수선언</h3>
+	<div th:with="var = '홍길동' ">
+		[[${var}]]
+	</div>
+	
+	<hr>
+	
+	
+	<!-- unless구문에는 if와 동일한 조건을 넣습니다 -->
+	<h3>타임리프 if unless</h3>
+	<div th:with="a = 10">
+		<span th:if="${a < 10}">참입니다</span>
+		<span th:unless="${a < 10}">거짓입니다</span>
+	</div>
+	
+	<hr>
+	
+	<h3>3항연산자</h3>
+	<div th:with="a = 20">
+		[[${a} > 20 ? '참' : '거짓' ]]
+		[[${a > 20 ? '참' : '거짓'} ]]
+	</div>
+	
+	
+	
+	
+</body>
+</html>
+
+
+
+
+

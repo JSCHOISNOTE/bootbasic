@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<h3>서버측 유효성 검증</h3>
+	
+	<!-- 인풋태그의 값, 인풋태그에 미리 값을 표현 value속성 -->
+	<!--  
+	숫자만 허용하는 태그속성
+	pattern="\d+"  
+	-->
+	
+	<form action="validForm" method="post">
+		이름: <input type="text" name="name"     th:value="${vo == null ? '' : vo.name }"   >[[${valid_name}]]<br>
+		급여: <input type="text" name="salary"  th:value="${vo == null ? '' : vo.salary}" >[[${valid_salary}]]<br>
+		전화번호: <input type="text" name="phone" th:value="${vo == null ? '' : vo.phone}"  >[[${valid_phone}]]<br>
+		이메일:<input type="text" name="email"    th:value="${vo == null ? '' : vo.email}"  >[[${valid_email}]]<br>
+		
+		<input type="submit" value="서버측유효성검사">
+	
+	</form>
+		
+	
+</body>
+</html>
+
+
+

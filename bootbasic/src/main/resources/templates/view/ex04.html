@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<h3>타임리프의 inline:javascript</h3>
+	
+	[[${vo}]]<br>
+	[[${name}]]<br>
+	[[${arr}]]<br>
+	
+	<script th:inline="javascript">
+		console.log(   JSON.parse('[[${vo}]]')     );
+		console.log(   JSON.parse('[[${name}]]')   );
+		console.log(   JSON.parse('[[${arr}]]' )   );
+
+	</script>
+	
+	
+	
+	
+</body>
+</html>

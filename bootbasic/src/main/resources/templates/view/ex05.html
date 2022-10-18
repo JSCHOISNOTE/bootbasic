@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<h3>타임리프 유틸리티 문법 ${#내장함수}</h3>
+
+	
+	<!-- list가 array로 변환 -->
+	[[${ #arrays.toArray( arr ) }]]
+	<br>
+	[[${ #arrays.length( #arrays.toArray( arr ) ) }]]
+	<br>
+	
+	<!-- 리스트의 길이 -->
+	[[ ${ #lists.size(arr) } ]]
+	
+	
+	
+	<br>
+	
+	<!-- 날짜형 데이터 -->
+	[[${vo.regdate }]]
+
+	<br>
+	<!-- 날짜형 데이터를 문자로 -->
+	[[ ${#temporals.format( vo.regdate , 'yyyy-MM-dd hh:mm:ss' ) } ]]
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</body>
+</html>
